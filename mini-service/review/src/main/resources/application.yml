@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: review-service
+  jpa:
+    hibernate:
+      ddl-auto: create
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+  zipkin:
+    tracing:
+      endpoint: http://zipkin:9411/api/v2/spans
+my:
+  config:
+    nextService: http://listing-service:8080
+
+feign:
+  trace:
+    enabled: true

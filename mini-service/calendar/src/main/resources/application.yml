@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: calendar-service
+  jpa:
+    hibernate:
+      ddl-auto: create
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+    application-name: listing-service
+  zipkin:
+    tracing:
+      endpoint: http://zipkin:9411/api/v2/spans
+
+feign:
+  trace:
+    enabled: true
