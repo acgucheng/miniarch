@@ -31,6 +31,7 @@ class ListingRequest:
             "license":license
         }
         response = requests.post(self.base_url, json=data)
+        print(response.status_code)
 
     def get(self, listing_id):
         url = self.base_url + f"/{listing_id}"
